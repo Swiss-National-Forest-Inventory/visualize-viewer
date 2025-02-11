@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<title>LFI - Visualize viewer</title>
+<meta name="robots" content="index, follow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="./libraries/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="./assets/style.css">
+<script src="./libraries/jquery.min.js"></script>
+<script src="./libraries/semantic.min.js"></script>
+<script src="./script.js" type="module"></script>
+</head>
+
+<body class="theme1">
+    <div id="loader" class="ui active dimmer">
+        <div class="ui large text loader"></div>
+    </div>
+
+    <div id="content">
+        <div id="title" class="ui menu">
+            <header class="header item">
+                <div class="logo-lfi">
+                    <a href="/de" title="Startseite aufrufen">
+                        <img src="./assets/lfi-logo.png" alt="Logo LFI" width="500" height="215" />
+                    </a>
+                </div>
+                <div class="backlink-container">
+                    <a id="backlink" href="/de/ergebnisabfrage/visualize" title="Zurück zur LFI-Website">Zurück</a>
+                </div>
+                <div class="right menu">
+                    <a class="active lang item" data-lang="de">DE</a>
+                    <a class="lang item" data-lang="fr">FR</a>
+                    <a class="lang item" data-lang="it">IT</a>
+                    <a class="lang item" data-lang="en">EN</a>
+                </div>
+            </header>
+        </div>
+
+        <div id="side" class="ui form">
+            <div class="side-header">
+                <h2 class="ui header" id="filter-label">
+                    Schritte
+                </h2>
+                <button id="reset-button" title="zurücksetzen"><i class="small sync icon"></i></button>
+            </div>
+            <div class="ui vertical steps">
+                <div
+                        class="active step"
+                        id="step-indicator-1"
+                        data-step="1"
+                >
+                    <div class="content">
+                        <div class="number">1</div>
+                        <div class="title" id="topic-step">Thema</div>
+                    </div>
+                </div>
+                <div class="step" id="step-indicator-2" data-step="2">
+                    <div class="content">
+                        <div class="number">2</div>
+                        <div class="title" id="classification-step">Klassifikation</div>
+                    </div>
+                </div>
+                <div class="step" id="step-indicator-3" data-step="3">
+                    <div class="content">
+                        <div class="number">3</div>
+                        <div class="title" id="additional-filters-step">
+                            Zusätzliche Filter
+                        </div>
+                    </div>
+                </div>
+                <div class="step" id="step-indicator-4" data-step="4">
+                    <div class="content">
+                        <div class="number">4</div>
+                        <div class="title" id="geography-step">Geografie</div>
+                    </div>
+                </div>
+            </div>
+            <div class="two buttons" id="stepper-buttons">
+                <button
+                        id="last-button"
+                        class="ui button disabled"
+                >
+                    <i class="arrow left icon"></i
+                    ><span id="last-button-label">Last</span>
+                </button>
+                <button id="next-button" class="ui button">
+                        <span id="next-button-label">Next</span
+                        ><i class="arrow right icon"></i>
+                </button>
+            </div>
+            <div class="field" id="step-1">
+                <div id="step-title-1" class="step-title">Thema</div>
+                <div id="topic-field"></div>
+            </div>
+            <div class="field in-active" id="step-2">
+                <div id="step-title-2" class="step-title">Klassifizierungsmerkmal</div>
+                <div id="classification-field"></div>
+                <div id="grouped-classification-field" class="field">
+                    <div class="ui toggle checkbox">
+                        <label for="grouped-classification" id="segmentation-label-classification">Segmentierung</label>
+                        <input
+                                id="grouped-classification"
+                                type="checkbox"
+                                class="hidden"
+                        />
+                    </div>
+                </div>
+                <div id="classification-filter"></div>
+            </div>
+            <div class="field in-active" id="step-3">
+                <div id="step-title-3" class="step-title">Zusätzliche Filter</div>
+                <div id="filters"></div>
+            </div>
+            <div class="field in-active" id="step-4">
+                <div id="step-title-4" class="step-title">Regionale Gliederung</div>
+                <div id="region-field" class="field"></div>
+                <div id="region-type-field" class="field"></div>
+                <div id="grouped-region-field" class="field">
+                    <div class="ui toggle checkbox">
+                        <label for="grouped-region" id="segmentation-label-region">Segmentierung</label>
+                        <input
+                                id="grouped-region"
+                                type="checkbox"
+                                class="hidden"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="main" class="">
+            <div class="visualization-buttons">
+                <div class="buttons">
+                    <button
+                            id="chart-button"
+                            class="ui active button"
+                            data-mode="chart"
+                    >
+                        <i class="chart bar icon"></i>Säulen
+                    </button>
+                    <button
+                            id="map-button"
+                            class="ui button"
+                            data-mode="map"
+                    >
+                        <i class="map icon"></i>Karte
+                    </button>
+                </div>
+                <div class="visualize-link"><a id="visualize-link" href="https://visualize.admin.ch/create/new?cube=https://environment.ld.admin.ch/foen/nfi/nfi_C-2635/cube/2024-1" target="_blank" rel="noopener">Auf visualize.admin.ch öffnen</a></div>
+            </div>
+            <div id="main-content">
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
