@@ -1,3 +1,5 @@
+import { env } from '../env.js';
+
 /**
  * I18nService is responsible for handling internationalization and localization logic.
  */
@@ -219,7 +221,9 @@ export class I18nService {
     backlink.innerHTML = this.config.backlink[lang];
     backlink.title = this.config.backlinkTitle[lang];
     backlink.href = this.config.backlinkHref[lang];
-    // this.translateURL(lang);
+    if (env.nfi) {
+      this.translateURL(lang);
+    }
   };
 
   /**
