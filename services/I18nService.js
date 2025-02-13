@@ -153,7 +153,10 @@ export class I18nService {
    */
   getLanguageFromUrl = (urlParams) => {
     let pageLanguageLFI;
-    if (env.nfi) {
+    /**
+     * Special configuration for NFI
+     */
+    if (env && env.nfi) {
       pageLanguageLFI = this.evaluateFromNFIUrl();
     }
     const fallbackLanguage = 'de';
@@ -228,9 +231,9 @@ export class I18nService {
     }
 
     /**
-     * Special configurations for NFI
+     * Special configuration for NFI
      */
-    if (env.nfi) {
+    if (env && env.nfi) {
       this.translateURL(lang);
       this.setLogoLink(lang);
     } else {
