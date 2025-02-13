@@ -21,10 +21,8 @@ export class LfiViewer {
    * @param {string} lang - The current language code (e.g., 'en', 'de', 'fr').
    * @param {string} baseUrl - The base URL for constructing endpoints or references.
    * @param {HTMLElement} container - The container element where charts or UI components are rendered.
-   * @param {string|null} container - The container element where charts or UI components are rendered.
-   * @param env
    */
-  constructor(lang, baseUrl, container, env) {
+  constructor(lang, baseUrl, container) {
 
     /**
      * The current language code in use (e.g., 'en', 'de', 'fr').

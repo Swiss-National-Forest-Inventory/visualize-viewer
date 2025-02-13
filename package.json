@@ -15,7 +15,8 @@
         "url": "https://github.com/Swiss-National-Forest-Inventory/visualize-viewer.git"
     },
     "scripts": {
-        "dev": "live-server && npm run copy-assets && npm run build-watch",
+        "serve": "live-server",
+        "dev": "npm run copy-assets && npm run build-watch",
         "build": "npm run copy-assets && esbuild ./index.js --bundle --platform=neutral --main-fields=module,main --minify --sourcemap --outfile=dist/visualize-viewer.min.js",
         "build-watch": "esbuild ./index.js --bundle --platform=neutral --main-fields=module,main --minify --sourcemap --outfile=dist/visualize-viewer.min.js --watch",
         "copy-assets": "esbuild ./src/assets/* --loader:.png=copy --outdir=./dist"

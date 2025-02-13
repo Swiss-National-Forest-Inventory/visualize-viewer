@@ -148,14 +148,15 @@ export class I18nService {
    * Retrieves the language from the provided URL parameters.
    *
    * @param {URLSearchParams} urlParams - The URLSearchParams object containing query parameters.
+   * @param {string|null} environment
    * @returns {string} The resolved language, either from the 'lang' parameter or the fallback.
    */
-  getLanguageFromUrl = (urlParams) => {
+  getLanguageFromUrl = (urlParams, environment) => {
     let pageLanguageLFI;
     /**
      * Special configuration for NFI
      */
-    if (this.env === 'nfi') {
+    if (environment === 'nfi') {
       pageLanguageLFI = this.evaluateFromNFIUrl();
     }
     const fallbackLanguage = 'de';

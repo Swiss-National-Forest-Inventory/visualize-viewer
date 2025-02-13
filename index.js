@@ -40,7 +40,7 @@ export async function initialize(lang, env = null) {
   try {
     if (lang === null) {
       const urlParams = getUrlParams();
-      lang = i18nService.getLanguageFromUrl(urlParams);
+      lang = i18nService.getLanguageFromUrl(urlParams, env);
     }
     if (env) {
       environment = env;
