@@ -22,6 +22,7 @@
         "fomantic-css": "esbuild ./node_modules/fomantic-ui/dist/semantic.min.css --outfile=./src/libraries/semantic.min.css",
         "fomantic-theme": "esbuild ./node_modules/fomantic-ui/dist/themes/default/assets/fonts/* --loader:.woff=copy --loader:.woff2=copy --outdir=./src/libraries/themes/default/assets/fonts/",
         "cleanup-libraries": "cf ./src/libraries",
+        "preinstall": "./postinstall.js",
         "postinstall": "./postinstall.js",
         "xpostinstall": "npm run pi-jquery & npm run pi-fomantic-js & npm run pi-fomantic-css & npm run pi-fomantic-theme $INIT_CWD",
         "pi-jquery": "esbuild ./node_modules/jquery/dist/jquery.min.js --outfile=./node_modules/visualize-viewer/src/libraries/jquery.min.js",
