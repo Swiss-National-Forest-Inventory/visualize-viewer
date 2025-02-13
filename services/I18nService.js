@@ -1,4 +1,4 @@
-import { env } from '../env.js';
+import { IS_NFI } from '../config.js';
 
 /**
  * I18nService is responsible for handling internationalization and localization logic.
@@ -156,7 +156,7 @@ export class I18nService {
     /**
      * Special configuration for NFI
      */
-    if (env && env.nfi) {
+    if (IS_NFI) {
       pageLanguageLFI = this.evaluateFromNFIUrl();
     }
     const fallbackLanguage = 'de';
@@ -233,7 +233,7 @@ export class I18nService {
     /**
      * Special configuration for NFI
      */
-    if (env && env.nfi) {
+    if (IS_NFI) {
       this.translateURL(lang);
       this.setLogoLink(lang);
     } else {
