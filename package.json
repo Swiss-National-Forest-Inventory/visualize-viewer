@@ -21,6 +21,7 @@
         "copy-assets": "esbuild ./src/assets/* --loader:.png=copy --outdir=./dist"
     },
     "devDependencies": {
+        "braces": "^3.0.3",
         "esbuild": "^0.25.0",
         "live-server": "^1.2.2"
     }
