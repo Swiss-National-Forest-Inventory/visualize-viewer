@@ -131,10 +131,10 @@ export class I18nService {
       en: '/en/result-query-system/visualize-viewer',
     },
     backlinkHref: {
-      de: 'https://www.lfi.ch/de/ergebnisabfrage/visualize',
-      fr: 'https://www.lfi.ch/fr/recherche-de-resultats/visualize',
-      it: 'https://www.lfi.ch/it/ricerca-di-risultati/visualize',
-      en: 'https://www.lfi.ch/en/result-query-system/visualize',
+      de: '/de/ergebnisabfrage/visualize',
+      fr: '/fr/recherche-de-resultats/visualize',
+      it: '/it/ricerca-di-risultati/visualize',
+      en: '/en/result-query-system/visualize',
     },
     backlinkTitle: {
       de: 'Zurück zur vorherigen Seite',
@@ -227,7 +227,7 @@ export class I18nService {
     if (backlink) {
       backlink.innerHTML = this.config.backlink[lang];
       backlink.title = this.config.backlinkTitle[lang];
-      backlink.href = this.config.backlinkHref[lang];
+      backlink.href = window.location.origin + this.config.backlinkHref[lang];
     }
 
     /**
