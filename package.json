@@ -4,7 +4,7 @@
     "version": "0.0.1",
     "homepage": "https://www.lfi.ch",
     "license": "MIT",
-    "main": "./script.js",
+    "main": "src/script.js",
     "author": {
       "name": "Swiss national forest inventory",
       "email": "lfiweb@wsl.ch",
@@ -17,11 +17,11 @@
     "scripts": {
         "dev": "live-server",
         "build": "npm run jquery & npm run fomantic-js & npm run fomantic-css & npm run fomantic-theme",
-        "jquery": "esbuild ./node_modules/jquery/dist/jquery.min.js --outfile=./libraries/jquery.min.js",
-        "fomantic-js": "esbuild ./node_modules/fomantic-ui/dist/semantic.min.js --outfile=./libraries/semantic.min.js",
-        "fomantic-css": "esbuild ./node_modules/fomantic-ui/dist/semantic.min.css --outfile=./libraries/semantic.min.css",
-        "fomantic-theme": "esbuild ./node_modules/fomantic-ui/dist/themes/default/assets/fonts/* --loader:.woff=copy --loader:.woff2=copy --outdir=./libraries/themes/default/assets/fonts/",
-        "cleanup-libraries": "cf ./libraries"
+        "jquery": "esbuild ./node_modules/jquery/dist/jquery.min.js --outfile=./src/libraries/jquery.min.js",
+        "fomantic-js": "esbuild ./node_modules/fomantic-ui/dist/semantic.min.js --outfile=./src/libraries/semantic.min.js",
+        "fomantic-css": "esbuild ./node_modules/fomantic-ui/dist/semantic.min.css --outfile=./src/libraries/semantic.min.css",
+        "fomantic-theme": "esbuild ./node_modules/fomantic-ui/dist/themes/default/assets/fonts/* --loader:.woff=copy --loader:.woff2=copy --outdir=./src/libraries/themes/default/assets/fonts/",
+        "cleanup-libraries": "cf ./src/libraries"
     },
     "dependencies": {
         "fomantic-ui": "^2.9.3",

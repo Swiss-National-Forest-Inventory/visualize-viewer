@@ -10,13 +10,13 @@ Branch: feature/stepper-interface
 
 - Design changes
 - Convert to module
-- Set default values in [./config.js](./config.js) for:
+- Set default values in [./src/config.js](src/config.js) for:
     - Thema
     - Klassifikationsmerkmal
 
 ## Queries
 
-[./util/QueryUtil.js](util/QueryUtil.js)
+[./src/util/QueryUtil.js](src/util/QueryUtil.js)
 
 ### getPropertiesOptions()
 
