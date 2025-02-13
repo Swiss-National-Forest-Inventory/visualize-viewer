@@ -152,7 +152,10 @@ export class I18nService {
    * @returns {string} The resolved language, either from the 'lang' parameter or the fallback.
    */
   getLanguageFromUrl = (urlParams) => {
-    const pageLanguageLFI = this.evaluateFromNFIUrl();
+    let pageLanguageLFI;
+    if (env.nfi) {
+      pageLanguageLFI = this.evaluateFromNFIUrl();
+    }
     const fallbackLanguage = 'de';
     let language = pageLanguageLFI ?? urlParams.get('lang') ?? fallbackLanguage;
     return this.isValidLanguage(language) ? language : 'de';
@@ -218,11 +221,22 @@ export class I18nService {
     document.getElementById('reset-button').title = this.config.resetButton[lang];
 
     const backlink = document.getElementById('backlink');
-    backlink.innerHTML = this.config.backlink[lang];
-    backlink.title = this.config.backlinkTitle[lang];
-    backlink.href = this.config.backlinkHref[lang];
+    if (backlink) {
+      backlink.innerHTML = this.config.backlink[lang];
+      backlink.title = this.config.backlinkTitle[lang];
+      backlink.href = this.config.backlinkHref[lang];
+    }
+
+    /**
+     * Special configurations for NFI
+     */
     if (env.nfi) {
       this.translateURL(lang);
+      this.setLogoLink(lang);
+    } else {
+      if (backlink) {
+        backlink.remove();
+      }
     }
   };
 
@@ -234,5 +248,12 @@ export class I18nService {
   translateURL = (lang) => {
     const updatedUrl = `${window.location.origin}${this.config.translatedPathname[lang]}#${window.location.hash}`;
     history.replaceState(null, '', updatedUrl);
+  }
+
+  setLogoLink = (lang) => {
+    const logolink = document.getElementById('logo-link');
+    if (logolink) {
+      logolink.href = '/' + lang;
+    }
   }
 }
