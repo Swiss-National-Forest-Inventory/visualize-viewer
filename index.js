@@ -1,8 +1,8 @@
-import {showLoader, hideLoader, showError} from './util/LoaderUtil.js';
-import {getUrlParams} from './util/shared.js';
-import {VISUALIZE_URL} from './config.js';
-import {LfiViewer} from './LfiViewer.js';
-import {I18nService} from './services/I18nService.js';
+import {showLoader, hideLoader, showError} from './src/util/LoaderUtil.js';
+import {getUrlParams} from './src/util/shared.js';
+import {VISUALIZE_URL} from './src/config.js';
+import {LfiViewer} from './src/LfiViewer.js';
+import {I18nService} from './src/services/I18nService.js';
 
 /**
  * Global variables and function definitions used to initialize and manage the main

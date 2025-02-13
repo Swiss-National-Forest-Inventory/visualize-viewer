@@ -4,24 +4,24 @@
     "version": "0.0.1",
     "homepage": "https://www.lfi.ch",
     "license": "MIT",
-    "main": "src/script.js",
+    "main": "index.js",
     "author": {
-      "name": "Swiss national forest inventory",
-      "email": "lfiweb@wsl.ch",
-      "url": "https://www.lfi.ch"
+        "name": "Swiss national forest inventory",
+        "email": "lfiweb@wsl.ch",
+        "url": "https://www.lfi.ch"
     },
     "repository": {
-      "type": "git",
-      "url": "https://github.com/Swiss-National-Forest-Inventory/visualize-viewer.git"
+        "type": "git",
+        "url": "https://github.com/Swiss-National-Forest-Inventory/visualize-viewer.git"
     },
     "scripts": {
-        "dev": "live-server"
-    },
-    "dependencies": {
-      "fomantic-ui": "^2.9.3",
-      "jquery": "^3.7.1"
+        "dev": "live-server && npm run copy-assets && npm run build-watch",
+        "build": "npm run copy-assets && esbuild ./index.js --bundle --platform=neutral --main-fields=module,main --minify --sourcemap --outfile=dist/visualize-viewer.min.js",
+        "build-watch": "esbuild ./index.js --bundle --platform=neutral --main-fields=module,main --minify --sourcemap --outfile=dist/visualize-viewer.min.js --watch",
+        "copy-assets": "esbuild ./src/assets/* --loader:.png=copy --outdir=./dist"
     },
     "devDependencies": {
+        "esbuild": "^0.25.0",
         "live-server": "^1.2.2"
     }
 }
