@@ -23,10 +23,10 @@
         "fomantic-theme": "esbuild ./node_modules/fomantic-ui/dist/themes/default/assets/fonts/* --loader:.woff=copy --loader:.woff2=copy --outdir=./src/libraries/themes/default/assets/fonts/",
         "cleanup-libraries": "cf ./src/libraries",
         "postinstall": "npm run pi-jquery & npm run pi-fomantic-js & npm run pi-fomantic-css & npm run pi-fomantic-theme",
-        "pi-jquery": "esbuild ./node_modules/jquery/dist/jquery.min.js --outfile=./node_modules/visualize-viewer/src/libraries/jquery.min.js",
-        "pi-fomantic-js": "esbuild ./node_modules/fomantic-ui/dist/semantic.min.js --outfile=./node_modules/visualize-viewer/src/libraries/semantic.min.js",
-        "pi-fomantic-css": "esbuild ./node_modules/fomantic-ui/dist/semantic.min.css --outfile=./node_modules/visualize-viewer/src/libraries/semantic.min.css",
-        "pi-fomantic-theme": "esbuild ./node_modules/fomantic-ui/dist/themes/default/assets/fonts/* --loader:.woff=copy --loader:.woff2=copy --outdir=./node_modules/visualize-viewer/src/libraries/themes/default/assets/fonts/"
+        "pi-jquery": "esbuild ../jquery/dist/jquery.min.js --outfile=./src/libraries/jquery.min.js",
+        "pi-fomantic-js": "esbuild ../fomantic-ui/dist/semantic.min.js --outfile=./src/libraries/semantic.min.js",
+        "pi-fomantic-css": "esbuild ../fomantic-ui/dist/semantic.min.css --outfile=./src/libraries/semantic.min.css",
+        "pi-fomantic-theme": "esbuild ../fomantic-ui/dist/themes/default/assets/fonts/* --loader:.woff=copy --loader:.woff2=copy --outdir=./src/libraries/themes/default/assets/fonts/"
     },
     "dependencies": {
         "fomantic-ui": "^2.9.3",
