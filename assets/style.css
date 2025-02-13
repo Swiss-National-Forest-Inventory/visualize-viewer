@@ -1,29 +1,29 @@
-:root {
-  --font-default: 1.4rem;
-  --font-small: 85%;
-  --grey0: #f9f9f9;
-  --grey-bg: #eeeeee;
-  --grey1: #dddddd;
-  --grey2: #cccccc;
-  --grey3: #aaaaaa;
-  --grey4: #666666;
-  --grey5: #333333;
-  --yellow: #fff166;
-  --orange1: #ffeebd;
-  --orange2: #ffcc66;
-  --braun1: #d99116;
-  --red1: #b31e00;
-  --red-accent: #fc3d0c;
-  --purple1: #bf8cdf;
-  --green1: #ecf3f3;
-  --green2: #9dbcbc;
-  --green3: #afd095;
-  --green-accent: #46c022;
-  --greenWsl: #006268;
-  --blue1: #5aa4ea;
-  --blue2: #729fcf;
-  --blue3: #3465a4;
-}
+/*:root {*/
+/*  --font-default: 1.4rem;*/
+/*  --font-small: 85%;*/
+/*  --grey0: #f9f9f9;*/
+/*  --grey-bg: #eeeeee;*/
+/*  --grey1: #dddddd;*/
+/*  --grey2: #cccccc;*/
+/*  --grey3: #aaaaaa;*/
+/*  --grey4: #666666;*/
+/*  --grey5: #333333;*/
+/*  --yellow: #fff166;*/
+/*  --orange1: #ffeebd;*/
+/*  --orange2: #ffcc66;*/
+/*  --braun1: #d99116;*/
+/*  --red1: #b31e00;*/
+/*  --red-accent: #fc3d0c;*/
+/*  --purple1: #bf8cdf;*/
+/*  --green1: #ecf3f3;*/
+/*  --green2: #9dbcbc;*/
+/*  --green3: #afd095;*/
+/*  --green-accent: #46c022;*/
+/*  --greenWsl: #006268;*/
+/*  --blue1: #5aa4ea;*/
+/*  --blue2: #729fcf;*/
+/*  --blue3: #3465a4;*/
+/*}*/
 
 body {
   display: block;
@@ -88,7 +88,7 @@ body {
   }
 
   a {
-    color: var(--greenWsl);
+    /*color: var(--greenWsl);*/
 
     &::before {
       position: relative;
@@ -98,7 +98,7 @@ body {
       width: 0;
       height: 0;
       border: .35rem solid transparent;
-      border-right-color: var(--greenWsl);
+      /*border-right-color: var(--greenWsl);*/
     }
   }
 }
@@ -228,7 +228,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--greenWsl);
+  /*color: var(--greenWsl);*/
   font-size: 1.2rem;
   width: 2rem;
   height: 2rem;
@@ -237,12 +237,12 @@ header {
 }
 
 h2.ui.header {
-  color: var(--greenWsl);
+  /*color: var(--greenWsl);*/
   margin: 0;
 }
 
 .step-title {
-  color: var(--greenWsl);
+  /*color: var(--greenWsl);*/
   font-weight: bold;
   font-size: 1.4rem;
   margin-bottom: 1rem;
@@ -270,8 +270,8 @@ h2.ui.header {
 
     .button {
       flex-basis: 48%;
-      border: 2px solid var(--greenWsl);
-      color: var(--greenWsl);
+      /*border: 2px solid var(--greenWsl);*/
+      /*color: var(--greenWsl);*/
       background-color: white;
       padding: 0.5rem 1rem;
 
@@ -281,9 +281,9 @@ h2.ui.header {
 
       &.active {
         pointer-events: none;
-        color: var(--red1);
-        border-color: var(--red1);
-        background-color: #f3f4f5;
+        /*color: var(--red1);*/
+        /*border-color: var(--red1);*/
+        /*background-color: #f3f4f5;*/
       }
     }
   }
@@ -306,7 +306,7 @@ h2.ui.header {
   &.steps .step .title,
   &.button,
   &.form input:not([type]) {
-    font-family: 'Open Sans', sans-serif;
+    /*font-family: 'Open Sans', sans-serif;*/
   }
 
   &.dropdown {
@@ -326,7 +326,7 @@ h2.ui.header {
   }
 
   &.menu {
-    font-family: 'Open Sans', sans-serif;
+    /*font-family: 'Open Sans', sans-serif;*/
     font-size: 1.1rem;
 
     header.header.item {
@@ -345,13 +345,13 @@ h2.ui.header {
 
       &:not(:last-of-type) {
         margin-right: 0.75rem;
-        border-right: 1px solid var(--grey4);
+        /*border-right: 1px solid var(--grey4);*/
       }
     }
 
     .active.item {
       background: none;
-      color: var(--blue1);
+      /*color: var(--blue1);*/
 
       &:hover {
         background: none;
@@ -360,7 +360,7 @@ h2.ui.header {
 
     a.item:hover {
       background: none;
-      color: var(--blue1);
+      /*color: var(--blue1);*/
     }
   }
 
@@ -373,12 +373,12 @@ h2.ui.header {
       }
 
       .title {
-        color: var(--greenWsl);
+        /*color: var(--greenWsl);*/
       }
 
       &.active {
         .title {
-          color: var(--red1);
+          /*color: var(--red1);*/
         }
       }
 
@@ -396,21 +396,21 @@ h2.ui.header {
           font-weight: 600;
           font-size: 1.1rem;
           line-height: 1;
-          border: 2px solid var(--greenWsl);
+          /*border: 2px solid var(--greenWsl);*/
           border-radius: 100%;
           display: flex;
           justify-content: center;
           align-items: center;
           text-align: center;
-          color: var(--greenWsl);
+          /*color: var(--greenWsl);*/
         }
       }
 
       &.active {
         .content {
           .number {
-            color: var(--red1);
-            border-color: var(--red1);
+            /*color: var(--red1);*/
+            /*border-color: var(--red1);*/
           }
         }
       }
@@ -426,20 +426,20 @@ h2.ui.header {
     }
   }
 
-  &.toggle.checkbox input:checked ~ label::before {
-    background-color: var(--greenWsl);
-  }
+  /*&.toggle.checkbox input:checked ~ label::before {*/
+  /*  background-color: var(--greenWsl);*/
+  /*}*/
 
-  &.button,
-  &.button:active,
-  #stepper-buttons .ui.button:focus {
-    background-color: var(--orange2);
-  }
+  /*&.button,*/
+  /*&.button:active,*/
+  /*#stepper-buttons .ui.button:focus {*/
+  /*  background-color: var(--orange2);*/
+  /*}*/
 
-  &.button:hover,
-  #stepper-buttons .ui.button:focus:hover {
-    background-color: var(--orange1);
-  }
+  /*&.button:hover,*/
+  /*#stepper-buttons .ui.button:focus:hover {*/
+  /*  background-color: var(--orange1);*/
+  /*}*/
 
   .active.button {
     cursor: default;
