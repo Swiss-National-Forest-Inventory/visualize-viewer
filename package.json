@@ -25,5 +25,9 @@
         "braces": "^3.0.3",
         "esbuild": "^0.25.0",
         "live-server": "^1.2.2"
+    },
+    "dependencies": {
+        "fomantic-ui": "^2.9.3",
+        "jquery": "^3.7.1"
     }
 }
