@@ -16,6 +16,8 @@ import {I18nService} from './services/I18nService.js';
  */
 let lfiViewer;
 
+let environment;
+
 /**
  * A global instance of the internationalization service.
  * @type {I18nService}
@@ -28,14 +30,22 @@ registerEvents();
 /**
  * Initializes the LfiViewer with a given language. Fetches data, sets up UI and
  * event listeners, and handles error scenarios.
- *
+ * @param {string|null} lang - The language
+ * @param {string|null} env - The environment (nfi, blw, ...)
  * @async
  * @function initialize
- * @param {string} lang - The language code (e.g., 'en', 'de', 'fr').
  * @returns {Promise<void>}
  */
-async function initialize(lang) {
+export async function initialize(lang, env = null) {
   try {
+    if (lang === null) {
+      const urlParams = getUrlParams();
+      lang = i18nService.getLanguageFromUrl(urlParams);
+    }
+    if (env) {
+      environment = env;
+    }
+
     showLoader();
 
     const element = document.getElementById('main-content');
@@ -44,14 +54,15 @@ async function initialize(lang) {
 
       // Instantiate the main viewer object
       lfiViewer = new LfiViewer(
-          lang,
-          VISUALIZE_URL,
-          element,
+        lang,
+        VISUALIZE_URL,
+        element,
+        environment
       );
 
       // Set and display the language
       i18nService.setLanguage(lang);
-      i18nService.updateLanguageDisplay(lang);
+      i18nService.updateLanguageDisplay(environment, lang);
 
       // Perform the LfiViewer initialization sequence
       await lfiViewer.initialize();
@@ -72,11 +83,11 @@ async function initialize(lang) {
 /**
  * Event handler for DOMContentLoaded. Reads the language from the URL and initializes the app.
  */
-document.addEventListener('DOMContentLoaded', async () => {
-  const urlParams = getUrlParams();
-  const language = i18nService.getLanguageFromUrl(urlParams);
-  await initialize(language);
-});
+// document.addEventListener('DOMContentLoaded', async () => {
+//   const urlParams = getUrlParams();
+//   const language = i18nService.getLanguageFromUrl(urlParams);
+//   await initialize(language);
+// });
 
 /**
  * Registers all necessary DOM event handlers for the application, including steps,
@@ -192,7 +203,7 @@ async function onChangeLang(event) {
   if (event) {
     const lang = event.target.dataset.lang;
     if (i18nService.isValidLanguage(lang)) {
-      await initialize(lang);
+      await initialize(lang, environment);
     }
   }
 }

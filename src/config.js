@@ -1,5 +1,3 @@
-export const IS_NFI = false;
-
 /**
  * The base URL for chart/map visualization.
  * @type {string}

@@ -1,9 +1,8 @@
-import { IS_NFI } from '../config.js';
-
 /**
  * I18nService is responsible for handling internationalization and localization logic.
  */
 export class I18nService {
+
   /**
    * An array containing the supported language codes for the application.
    *
@@ -156,7 +155,7 @@ export class I18nService {
     /**
      * Special configuration for NFI
      */
-    if (IS_NFI) {
+    if (this.env === 'nfi') {
       pageLanguageLFI = this.evaluateFromNFIUrl();
     }
     const fallbackLanguage = 'de';
@@ -202,10 +201,11 @@ export class I18nService {
   /**
    * Updates the text content of various UI elements to display in the specified language.
    *
+   * @param {string} environment - The env, f.e. NFI or BLW
    * @param {string} lang - The language to set for the UI text. This should match a key in the `config` object for localized text.
    * @returns {void}
    */
-  updateLanguageDisplay = (lang) => {
+  updateLanguageDisplay = (environment, lang) => {
     document.getElementById('filter-label').innerHTML = this.config.filter[lang];
     document.getElementById('chart-button').innerHTML = `<i class="chart bar icon"></i>${this.config.chart[lang]}`;
     document.getElementById('map-button').innerHTML = `<i class="map icon"></i>${this.config.map[lang]}`;
@@ -233,7 +233,7 @@ export class I18nService {
     /**
      * Special configuration for NFI
      */
-    if (IS_NFI) {
+    if (environment === 'nfi') {
       this.translateURL(lang);
       this.setLogoLink(lang);
     } else {
