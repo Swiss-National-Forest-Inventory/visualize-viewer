@@ -1,1 +1,1 @@
-console.log('process.env.INIT_CWD', process.env.INIT_CWD);
+console.log('process', process);
