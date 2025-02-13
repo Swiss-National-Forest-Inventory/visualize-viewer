@@ -1,7 +1,19 @@
 {
     "name": "visualize-viewer",
+    "description": "Visualize cubes on visualize.admin.ch",
+    "version": "0.0.1",
     "homepage": "https://www.lfi.ch",
     "license": "MIT",
+    "main": "./script.js",
+    "author": {
+      "name": "Swiss national forest inventory",
+      "email": "lfiweb@wsl.ch",
+      "url": "https://www.lfi.ch"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Swiss-National-Forest-Inventory/visualize-viewer.git"
+    },
     "scripts": {
         "dev": "live-server",
         "build": "npm run jquery & npm run fomantic-js & npm run fomantic-css & npm run fomantic-theme",
